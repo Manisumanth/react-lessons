@@ -1,4 +1,3 @@
-
 import React, { useContext, useState } from "react";
 import { AppContext } from "./App21";
 export default function Register() {
