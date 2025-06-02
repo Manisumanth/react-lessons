@@ -1,7 +1,11 @@
-.App-Footer-Row{
-    margin-top: 100px;
-    background: linear-gradient(to right, #f8ede3, #fce1e4);
-    color: #d86c7a;
-    padding: 8px;
-    font-weight: bold;
+.App-Footer-Row {
+  margin-top: 100px;
+  background-color: white;
+  color: #007BFF;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #007BFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

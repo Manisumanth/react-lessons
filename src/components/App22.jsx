@@ -1,46 +1,40 @@
-import React, { createContext, useState } from "react";
-import Register from "./Register";
-import Login from "./Login";
-import "./App21.css"; 
+import React, { useState , useEffect} from "react";
+import axios from "axios";
 
-export const AppContext = createContext();
+export default function App22() {
+    // const API = import.meta.env.VITE_API_URL;
+    const [msg, setMsg] = useState('');
 
-export default function App21() {
-  const [users, setUsers] = useState([]);
+    const fetchWeather = async () => {
+        //  const url = `${API}/weather`;
+        const res = await axios.get("http://localhost:8080/weather");
+        setMsg(res.data);
+    }
+    useEffect(()=>{
+        fetchWeather();
+        
+    },[]);
+    return <div>{msg}</div>
 
-  return (
-    <>
-    <h1 style={{ color: "#d86c7a" }}>App21</h1>
-    <div className="app-container">
-      
+//     const weather = async () => {
+//     const url = `${API}/weather`;
+
+//     try {
      
+//       const response = await axios.get(url);
 
-      <AppContext.Provider value={{ users, setUsers }}>
-        <div className="section-container">
-          <div className="box">
-            <Register />
-          </div>
-          <div className="box">
-            <Login />
-          </div>
-        </div>
+//       const weatherData = response.data;
 
-        <div className="user-list">
-          <h3 style={{ color: "#d86c7a" }}>Registered Users</h3>
-          {users.length === 0 ? (
-            <p>No users registered yet.</p>
-          ) : (
-            <ul>
-              {users.map((user, index) => (
-                <li key={index}>
-                  <strong>{user.name}</strong> - {user.email}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </AppContext.Provider>
-    </div>
-    </>
-  );
+//       setMsg(`Today's Weather is  ${weatherData} :)`);
+//     } catch (error) {
+//       setMsg("error");
+//       console.error(error);
+//     }
+//   };
+//   return (
+//     <>
+//    <button onClick={weather}>Weather</button>
+//    <p>{msg}</p>
+//    </>
+//   );
 }

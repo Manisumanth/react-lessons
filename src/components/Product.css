@@ -1,18 +1,28 @@
 .App-Product-Box {
-    margin: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    width: 300px;
-    background: linear-gradient(to right, #f8ede3, #fce1e4);
-    color: #d86c7a;
-    border: dotted;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  background-color: white;
+  color: #007BFF;
+  border: 1px solid #007BFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-button{
-    padding: 10px;
-    background: white;
-    border-radius: 5px;
-    border: dotted 1px pink;
-    font-weight: bold;
-    color: #d86c7a;
-    margin-left: 0px;
+
+button {
+  padding: 10px 15px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #007BFF;
+  font-weight: bold;
+  color: #007BFF;
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
 }
